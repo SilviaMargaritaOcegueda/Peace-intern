@@ -3,15 +3,15 @@
 
 // @title addTestament function from the Heritage contract 
 
-    // The Memory contract address
-    address private memoryAddress;
+    // The Memory contract address, maybe better to store it on the .env file
+    address constant MEMORYADDRESS;
 
     // Yet to be included on the Testator struct
     uint256 memoryId;
 
     //Call the mintMemory function from the Memory interface
     function createMemory(string memory _tokenURI) private returns (uint256 newItemId){
-        IMemory(memoryAddress).mintMemory(_tokenURI);
+        IMemory(MEMORYADDRESS).mintMemory(_tokenURI);
     }
 
     function addTestament(
